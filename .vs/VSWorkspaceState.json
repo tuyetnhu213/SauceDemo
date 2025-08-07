@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\cypress",
+    "\\cypress\\e2e",
+    "\\cypress\\fixtures",
+    "\\cypress\\pages",
+    "\\cypress\\support"
+  ],
+  "PreviewInSolutionExplorer": false
+}
