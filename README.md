@@ -10,7 +10,11 @@ Video recording is enabled for all test executions.
 
 **🚀 Installation & Setup**
 
-Clone the repository https://github.com/tuyetnhu213/SauceDemo
+Use this command to clone this reporsitory:
+
+cd <your_directory>
+
+git clone https://github.com/tuyetnhu213/SauceDemo
 
 
 Run the following command to install Cypress:
