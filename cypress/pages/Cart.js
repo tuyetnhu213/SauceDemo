@@ -9,7 +9,8 @@ class Cart {
         price: () => cy.get('.inventory_item_price'),
         quantity: () => cy.get('.cart_quantity'), 
         inventoryItemName: ($el) => cy.wrap($el).find('.inventory_item_name'),
-        continueShoppingBtn: () => cy.get('#continue-shopping')
+        continueShoppingBtn: () => cy.get('#continue-shopping'),
+        checkoutBtn: () => cy.get('#checkout')
 
     }
 
@@ -47,7 +48,7 @@ class Cart {
     getAllCartItems() {
         cartList = [];
         this.element.cartItem().each(($el) => {
-            cartList.push(this.getCartItem($el);
+            cartList.push(this.getCartItem($el))
         })
     }
 }

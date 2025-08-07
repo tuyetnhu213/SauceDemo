@@ -4,9 +4,8 @@
     "\\cypress",
     "\\cypress\\e2e",
     "\\cypress\\fixtures",
-    "\\cypress\\pages",
-    "\\cypress\\support"
+    "\\cypress\\pages"
   ],
-  "SelectedNode": "\\cypress\\pages\\Checkout.js",
+  "SelectedNode": "\\cypress\\e2e\\inventory.cy.js",
   "PreviewInSolutionExplorer": false
 }

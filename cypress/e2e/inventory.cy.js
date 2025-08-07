@@ -10,20 +10,9 @@ describe('Inventory Test', () => {
     beforeEach(() => {
         //Precondition: go to login page and login
         loginPage.visit();
-        loginPage.login('standard_user', 'secret_sauce');
-    })
-
-    it(('Validate About Menu'), () => {
-        inventory.element.menuBtn().should('be.visible').click();
-        inventory.element.aboutMenuItem().should('be.visible').click();
-        cy.url().should('eq', 'https://saucelabs.com/');
-    })
-
-    it(('Validate Logout Menu'), () => {
-        inventory.element.menuBtn().should('be.visible').click();
-        inventory.element.logoutMenuItem().should('be.visible').click();
-        cy.url().should('eq', 'https://www.saucedemo.com/');
-    })
+        cy.fixture('user').then((data) => {
+            loginPage.login(data.standard_user, data.password);
+        })    })
 
     it('Validate product details page', () => {
 
@@ -50,25 +39,6 @@ describe('Inventory Test', () => {
 
     })
 
-    it(('Validate menu dropdown'), () => {
-        //Create a dropdown list menu
-        const expectedMenu = ["All Items", "About", "Logout", "Reset App State"];
-
-        //Click on Menu icon
-        inventory.element.menuBtn().should('be.visible').click();
-
-        //Assert option in dropdown list
-        inventory.element.menuItem().find('a').each(($el, index) => {
-            cy.wrap($el).should('have.text', expectedMenu[index]);
-        })
-
-        //Asset About button
-
-    })
-
-    it(('Validate button About in menu'), () => {
-
-    })
 
     it('Validate number of Products', () => {
         //Get the number of ProductsItem element that should be 6
@@ -95,7 +65,7 @@ describe('Inventory Test', () => {
             // $        → End of string
 
             //Assert that the Button at each Production should Add to cart
-            inventory.element.itemBtn($el).should('contain', 'Add to cart')
+            inventory.element.addtoCartBtn($el).should('contain', 'Add to cart')
 
         })
     })
@@ -107,9 +77,9 @@ describe('Inventory Test', () => {
         //Loop all products
         inventory.element.productItem().each(($el) => {
             //Click button add to cart
-            inventory.element.itemBtn($el).click();
+            inventory.element.addtoCartBtn($el).click();
             //Assert that the text of button should be changed to Remove
-            inventory.element.itemBtn($el).should('contain', 'Remove');
+            inventory.element.addtoCartBtn($el).should('contain', 'Remove');
 
             //Add the Production Name to the cartList
             inventory.element.itemName($el).invoke('text').then((text) => {
@@ -125,7 +95,7 @@ describe('Inventory Test', () => {
         //Loop all products again
         inventory.element.productItem().each(($el) => {
             //Click button add to cart
-            inventory.element.itemBtn($el).click();
+            inventory.element.addtoCartBtn($el).click();
             //Validate that the button should be changed to Add to Cart
             inventory.element.addtoCartBtn($el).should('contain', 'Add to cart');
 

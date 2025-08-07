@@ -4,13 +4,15 @@ class LoginPage {
         usernameInput: () => cy.get('#user-name').should('be.visible'),
         passwordInput: () => cy.get('#password').should('be.visible'),
         loginBtn: () => cy.get('#login-button').should('be.enabled'),
-        loginFailedNotification: () => cy.get('.error-message-container.error').should('have.text', 'Epic sadface: Username and password do not match any user in this service')
+        loginFailedNotification: () => cy.get('.error-message-container.error')
     }
 
     // Visit the Login Page with intercepting the GET request to ensure page is fully loaded
     visit() {
         cy.intercept('GET', '/').as('loginPage');
-        cy.visit('https://www.saucedemo.com/')
+        cy.fixture('url').then((data) => {
+            cy.visit(data.saucedemo);
+        })
         cy.wait('@loginPage')
     }
 

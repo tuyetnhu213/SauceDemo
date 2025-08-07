@@ -11,12 +11,15 @@ describe('Cart Test', () => {
     beforeEach(() => {
         //Precondition: go to login page and login
         loginPage.visit();
-        loginPage.login('standard_user', 'secret_sauce');
-    })
+        cy.fixture('user').then((data) => {
+            loginPage.login(data.standard_user, data.password);
+        })    })
 
     it('Validate the cart should be null when there is no item selected', () => {
         inventory.element.cartBtn().should('be.visible').click();
-        cy.url().should('eq', 'https://www.saucedemo.com/cart.html');
+        cy.fixture('url').then((data) => {
+            cy.url().should('equal', data.cart)
+        })
         cart.element.cartItem().should('not.exist');
     })
 
