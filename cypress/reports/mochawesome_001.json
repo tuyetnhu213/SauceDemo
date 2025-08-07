@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-07T20:57:56.664Z",
+    "end": "2025-08-07T20:58:04.683Z",
+    "duration": 8019,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a24e6f75-16dd-45f9-8e13-1fca7ca8e848",
+      "title": "",
+      "fullFile": "cypress\\e2e\\checkout.cy.js",
+      "file": "cypress\\e2e\\checkout.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "05177aa9-efa5-4653-b700-3594ad10cb54",
+          "title": "Inventory Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate that we cannot continue when missing First Name",
+              "fullTitle": "Inventory Test Validate that we cannot continue when missing First Name",
+              "timedOut": null,
+              "duration": 1686,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Save current cartItem\ncart.getCartItem(1).then(cartItem => {\n  //Go to Checkout page\n  cart.element.checkoutBtn().click();\n  cy.fixture('url').then(data => {\n    cy.url().should('eq', data.checkoutstep1);\n  });\n  //Click on Continure button\n  checkout.element.continueBtn().click();\n  checkout.element.errorMissingInf().should('have.text', 'Error: First Name is required');\n});",
+              "err": {},
+              "uuid": "0d71b90b-4e2d-49f7-a974-1d5f0b801261",
+              "parentUUID": "05177aa9-efa5-4653-b700-3594ad10cb54",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate that we cannot continue when missing Last Name",
+              "fullTitle": "Inventory Test Validate that we cannot continue when missing Last Name",
+              "timedOut": null,
+              "duration": 1740,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Save current cartItem\ncart.getCartItem(1).then(cartItem => {\n  //Go to Checkout page\n  cart.element.checkoutBtn().click();\n  cy.fixture('url').then(data => {\n    cy.url().should('eq', data.checkoutstep1);\n  });\n  const FirstName = \"FirstName\";\n  const ZipCode = \"123456\";\n  checkout.element.firstName().type(FirstName).should('have.value', FirstName);\n  checkout.element.postalCode().type(ZipCode).should('have.value', ZipCode);\n  //Click on Continure button\n  checkout.element.continueBtn().click();\n  checkout.element.errorMissingInf().should('have.text', 'Error: Last Name is required');\n});",
+              "err": {},
+              "uuid": "e9bdaeed-be14-498c-b214-3f041a32d0eb",
+              "parentUUID": "05177aa9-efa5-4653-b700-3594ad10cb54",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate that we cannot continue when missing Zip/Postal Code",
+              "fullTitle": "Inventory Test Validate that we cannot continue when missing Zip/Postal Code",
+              "timedOut": null,
+              "duration": 1601,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Save current cartItem\ncart.getCartItem(1).then(cartItem => {\n  //Go to Checkout page\n  cart.element.checkoutBtn().click();\n  cy.fixture('url').then(data => {\n    cy.url().should('eq', data.checkoutstep1);\n  });\n  const FirstName = \"FirstName\";\n  const LastName = \"FirstName\";\n  const ZipCode = \"123456\";\n  checkout.element.firstName().type(FirstName).should('have.value', FirstName);\n  checkout.element.lastName().type(LastName).should('have.value', LastName);\n  //Continue\n  checkout.element.continueBtn().click();\n  checkout.element.errorMissingInf().should('have.text', 'Error: Postal Code is required');\n});",
+              "err": {},
+              "uuid": "369b9c1a-939a-45b3-ab0a-623b83766746",
+              "parentUUID": "05177aa9-efa5-4653-b700-3594ad10cb54",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate check out successully",
+              "fullTitle": "Inventory Test Validate check out successully",
+              "timedOut": null,
+              "duration": 1877,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Save current cartItem\ncart.getCartItem(1).then(cartItem => {\n  //Go to Checkout page\n  cart.element.checkoutBtn().click();\n  cy.fixture('url').then(data => {\n    cy.url().should('eq', data.checkoutstep1);\n  });\n  //Input information in checkout step one page\n  const FirstName = \"FirstName\";\n  const LastName = \"FirstName\";\n  const ZipCode = \"123456\";\n  checkout.element.firstName().type(FirstName).should('have.value', FirstName);\n  checkout.element.lastName().type(LastName).should('have.value', LastName);\n  checkout.element.postalCode().type(ZipCode).should('have.value', ZipCode);\n  //Continue\n  checkout.element.continueBtn().click();\n  cy.fixture('url').then(data => {\n    cy.url().should('eq', data.checkoutstep2);\n  });\n  //Assert cartItem should equal checkoutItem\n  cart.getCartItem(1).then(checkoutItem => {\n    expect(checkoutItem).to.deep.equal(cartItem);\n  });\n  checkout.element.finishBtn().click();\n  cy.fixture('url').then(data => {\n    cy.url().should('eq', data.checkoutcompelete);\n  });\n  checkout.element.tksforOrdertxt();\n});",
+              "err": {},
+              "uuid": "3d92f58f-9ba4-4ebf-b1b6-98a8404f247f",
+              "parentUUID": "05177aa9-efa5-4653-b700-3594ad10cb54",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0d71b90b-4e2d-49f7-a974-1d5f0b801261",
+            "e9bdaeed-be14-498c-b214-3f041a32d0eb",
+            "369b9c1a-939a-45b3-ab0a-623b83766746",
+            "3d92f58f-9ba4-4ebf-b1b6-98a8404f247f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6904,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

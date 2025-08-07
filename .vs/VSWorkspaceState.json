@@ -4,8 +4,10 @@
     "\\cypress",
     "\\cypress\\e2e",
     "\\cypress\\fixtures",
-    "\\cypress\\pages"
+    "\\cypress\\pages",
+    "\\cypress\\reports",
+    "\\cypress\\support"
   ],
-  "SelectedNode": "\\cypress\\e2e\\inventory.cy.js",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }

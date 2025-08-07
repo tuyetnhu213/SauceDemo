@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-07T20:58:07.552Z",
+    "end": "2025-08-07T20:58:12.714Z",
+    "duration": 5162,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0f4065d0-ccd5-44df-8022-89bdad525ca4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\common.cy.js",
+      "file": "cypress\\e2e\\common.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dd08ce45-0070-4aaf-841b-018cf08f3624",
+          "title": "Common Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate menu dropdown",
+              "fullTitle": "Common Test Validate menu dropdown",
+              "timedOut": null,
+              "duration": 1698,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Create a dropdown list menu\nconst expectedMenu = [\"All Items\", \"About\", \"Logout\", \"Reset App State\"];\n//Click on Menu icon\ncommon.element.menuBtn().should('be.visible').click();\n//Assert option in dropdown list\ncommon.element.menuItem().find('a').each(($el, index) => {\n  cy.wrap($el).should('have.text', expectedMenu[index]);\n});",
+              "err": {},
+              "uuid": "2752467e-f9c6-4a1c-914f-a7ddc04b124d",
+              "parentUUID": "dd08ce45-0070-4aaf-841b-018cf08f3624",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate About Menu",
+              "fullTitle": "Common Test Validate About Menu",
+              "timedOut": null,
+              "duration": 985,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "common.element.menuBtn().should('be.visible').click();\ncy.fixture('url').then(data => {\n  common.element.aboutMenuItem().should('have.attr', 'href', data.saucelab);\n});",
+              "err": {},
+              "uuid": "4d8334a2-77b6-47f7-9b49-faaab20cbb84",
+              "parentUUID": "dd08ce45-0070-4aaf-841b-018cf08f3624",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate Logout Menu",
+              "fullTitle": "Common Test Validate Logout Menu",
+              "timedOut": null,
+              "duration": 1271,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "common.element.menuBtn().should('be.visible').click();\ncommon.element.logoutMenuItem().should('be.visible').click();\ncy.fixture('url').then(data => {\n  cy.url().should('equal', data.saucedemo);\n});",
+              "err": {},
+              "uuid": "f9b97aba-d354-4bc8-b0c9-9a3bec05a84e",
+              "parentUUID": "dd08ce45-0070-4aaf-841b-018cf08f3624",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2752467e-f9c6-4a1c-914f-a7ddc04b124d",
+            "4d8334a2-77b6-47f7-9b49-faaab20cbb84",
+            "f9b97aba-d354-4bc8-b0c9-9a3bec05a84e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3954,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

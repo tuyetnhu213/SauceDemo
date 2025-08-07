@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-07T21:20:20.828Z",
+    "end": "2025-08-07T21:20:25.634Z",
+    "duration": 4806,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c6cfe379-ad6a-4f1e-8bb7-ce392ee029d7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ac6225e3-e4bc-4faa-90ab-45da837fe1a0",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate login successully",
+              "fullTitle": "Login Validate login successully",
+              "timedOut": null,
+              "duration": 1679,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.visit();\ncy.fixture('user').then(data => {\n  loginPage.login(data.standard_user, data.password);\n});\ncy.fixture('url').then(data => {\n  cy.url().should('equal', data.inventory);\n});",
+              "err": {},
+              "uuid": "85eff579-6472-4f12-a090-605f65c47fa6",
+              "parentUUID": "ac6225e3-e4bc-4faa-90ab-45da837fe1a0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate login failed with invalid password",
+              "fullTitle": "Login Validate login failed with invalid password",
+              "timedOut": null,
+              "duration": 1070,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.visit();\ncy.fixture('user').then(data => {\n  loginPage.login(data.standard_user, data.password + \"1\");\n});\nloginPage.elements.loginFailedNotification().should('have.text', 'Epic sadface: Username and password do not match any user in this service');",
+              "err": {},
+              "uuid": "c07d476b-fc03-4b40-b947-c8fda9a9eacb",
+              "parentUUID": "ac6225e3-e4bc-4faa-90ab-45da837fe1a0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate login failed with locked_out_user",
+              "fullTitle": "Login Validate login failed with locked_out_user",
+              "timedOut": null,
+              "duration": 963,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.visit();\ncy.fixture('user').then(data => {\n  loginPage.login(data.locked_out_user, data.password);\n});\nloginPage.elements.loginFailedNotification().should('have.text', 'Epic sadface: Sorry, this user has been locked out.');",
+              "err": {},
+              "uuid": "e559dc8d-3147-418f-acca-f4c1b1123f5b",
+              "parentUUID": "ac6225e3-e4bc-4faa-90ab-45da837fe1a0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "85eff579-6472-4f12-a090-605f65c47fa6",
+            "c07d476b-fc03-4b40-b947-c8fda9a9eacb",
+            "e559dc8d-3147-418f-acca-f4c1b1123f5b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3712,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
