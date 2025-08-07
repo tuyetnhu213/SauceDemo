@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\cypress",
+    "\\cypress\\e2e",
+    "\\cypress\\fixtures",
+    "\\cypress\\pages",
+    "\\cypress\\reports",
+    "\\cypress\\support"
+  ],
+  "SelectedNode": "\\gitignore",
+  "PreviewInSolutionExplorer": false
+}
