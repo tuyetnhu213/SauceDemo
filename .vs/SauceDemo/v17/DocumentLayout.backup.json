@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\SauceDemo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SauceDemo\\cypress\\e2e\\inventory.cy.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cypress\\e2e\\inventory.cy.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SauceDemo\\cypress\\e2e\\cart.cy.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cypress\\e2e\\cart.cy.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SauceDemo\\cypress\\pages\\Cart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cypress\\pages\\Cart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SauceDemo\\cypress\\pages\\Inventory.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cypress\\pages\\Inventory.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SauceDemo\\cypress\\pages\\LoginPage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cypress\\pages\\LoginPage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SauceDemo\\cypress\\e2e\\inventory.cy.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cypress\\e2e\\inventory.cy.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SauceDemo\\cypress\\e2e\\login.cy.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cypress\\e2e\\login.cy.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SauceDemo\\cypress\\pages\\LoginPage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cypress\\pages\\LoginPage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +34,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "LoginPage.js",
               "DocumentMoniker": "C:\\SauceDemo\\cypress\\pages\\LoginPage.js",
               "RelativeDocumentMoniker": "cypress\\pages\\LoginPage.js",
               "ToolTip": "C:\\SauceDemo\\cypress\\pages\\LoginPage.js",
               "RelativeToolTip": "cypress\\pages\\LoginPage.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAA8wAUAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-08-05T15:31:48.255Z",
               "IsPinned": true,
@@ -44,7 +52,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "login.cy.js",
               "DocumentMoniker": "C:\\SauceDemo\\cypress\\e2e\\login.cy.js",
               "RelativeDocumentMoniker": "cypress\\e2e\\login.cy.js",
@@ -54,6 +62,32 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-08-05T15:38:33.958Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "cart.cy.js",
+              "DocumentMoniker": "C:\\SauceDemo\\cypress\\e2e\\cart.cy.js",
+              "RelativeDocumentMoniker": "cypress\\e2e\\cart.cy.js",
+              "ToolTip": "C:\\SauceDemo\\cypress\\e2e\\cart.cy.js",
+              "RelativeToolTip": "cypress\\e2e\\cart.cy.js",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAwwCYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-08-07T10:43:57.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cart.js",
+              "DocumentMoniker": "C:\\SauceDemo\\cypress\\pages\\Cart.js",
+              "RelativeDocumentMoniker": "cypress\\pages\\Cart.js",
+              "ToolTip": "C:\\SauceDemo\\cypress\\pages\\Cart.js",
+              "RelativeToolTip": "cypress\\pages\\Cart.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-08-07T10:43:46.53Z",
               "EditorCaption": ""
             },
             {
@@ -78,26 +112,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "inventory.cy.js",
               "DocumentMoniker": "C:\\SauceDemo\\cypress\\e2e\\inventory.cy.js",
               "RelativeDocumentMoniker": "cypress\\e2e\\inventory.cy.js",
               "ToolTip": "C:\\SauceDemo\\cypress\\e2e\\inventory.cy.js",
               "RelativeToolTip": "cypress\\e2e\\inventory.cy.js",
-              "ViewState": "AgIAAJkAAAAAAAAAAADwv/8AAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHUAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-08-05T20:02:46.842Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Inventory.js",
               "DocumentMoniker": "C:\\SauceDemo\\cypress\\pages\\Inventory.js",
               "RelativeDocumentMoniker": "cypress\\pages\\Inventory.js",
               "ToolTip": "C:\\SauceDemo\\cypress\\pages\\Inventory.js",
               "RelativeToolTip": "cypress\\pages\\Inventory.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-08-05T20:00:02.413Z",
               "EditorCaption": ""

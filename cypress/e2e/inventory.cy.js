@@ -13,39 +13,31 @@ describe('Inventory Test', () => {
         loginPage.login('standard_user', 'secret_sauce');
     })
 
+    it(('Validate About Menu'), () => {
+        inventory.element.menuBtn().should('be.visible').click();
+        inventory.element.aboutMenuItem().should('be.visible').click();
+        cy.url().should('eq', 'https://saucelabs.com/');
+    })
+
+    it(('Validate Logout Menu'), () => {
+        inventory.element.menuBtn().should('be.visible').click();
+        inventory.element.logoutMenuItem().should('be.visible').click();
+        cy.url().should('eq', 'https://www.saucedemo.com/');
+    })
+
     it('Validate product details page', () => {
 
-        //Create prodList array and push product item into array
-        const prodList = [];
-        inventory.element.productItem().each(($el) => {
-            inventory.element.itemName($el).invoke('text').then((prodName) => {
-                inventory.element.itemDesc($el).invoke('text').then((prodDesc) => {
-                    inventory.element.itemImg($el).invoke('attr', 'src').then((prodImg) => {
-                        inventory.element.itemPrice($el).invoke('text').then((prodPrice) => {
-                            prodList.push({
-                                name: prodName,
-                                desc: prodDesc,
-                                img: prodImg,
-                                price: prodPrice
-                            })
-                        });
-                    });
-                });
-            });
-        })
+        const prodList = inventory.getProdList();
         //Loop prodList array and compare value on the Details page with items in array
         cy.then(() => {
             prodList.forEach((product, index) => {
                 cy.xpath("//img[@alt='" + product.name + "']").click();
-
                 //validate detail page is navigated
                 cy.url().should('include', 'inventory-item.html?id=');
 
                 //validate src of image
-                inventory.element.imgDetail().invoke('attr', 'src').then((src) => {
-                    product.prodImg == src;
-                });
 
+                inventory.element.imgDetail().should('have.attr', 'src', product.img);
                 //validate product Name, Description and Price
                 inventory.element.nameDetail().should('have.text', product.name);
                 inventory.element.descDetail().should('have.text', product.desc);
@@ -58,22 +50,25 @@ describe('Inventory Test', () => {
 
     })
 
-    it(('Validate menu button'), () => {
+    it(('Validate menu dropdown'), () => {
         //Create a dropdown list menu
         const expectedMenu = ["All Items", "About", "Logout", "Reset App State"];
 
         //Click on Menu icon
         inventory.element.menuBtn().should('be.visible').click();
 
-        //Asset option in dropdown list
+        //Assert option in dropdown list
         inventory.element.menuItem().find('a').each(($el, index) => {
             cy.wrap($el).should('have.text', expectedMenu[index]);
         })
 
-        //Asset button 
+        //Asset About button
+
     })
 
-    it.only
+    it(('Validate button About in menu'), () => {
+
+    })
 
     it('Validate number of Products', () => {
         //Get the number of ProductsItem element that should be 6
@@ -132,7 +127,7 @@ describe('Inventory Test', () => {
             //Click button add to cart
             inventory.element.itemBtn($el).click();
             //Validate that the button should be changed to Add to Cart
-            inventory.element.itemBtn($el).should('contain', 'Add to cart');
+            inventory.element.addtoCartBtn($el).should('contain', 'Add to cart');
 
             //Remove the last item in the cartList
             inventory.element.itemName($el).invoke('text').then((text) => {
